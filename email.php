@@ -2,13 +2,16 @@
 if(isset($_POST['email']) && !empty($_POST['email'])){
     $nome = addslashes($_POST['nome']);
     $email = addslashes($_POST['email']);
+    $sobrenome = addcslashes($_POST['sobrenome']);
+    $mensagem = addslashes($_POST['mensagem']);
 
     $destinatario = "lucasbrancalhao454@gmail.com";
 
     $assunto = "Formulário - Contato";
 
-    $mensagem = "Nome: " .$nome. "\r\n" .
-                "Email: " .$email. "\r\n";
+    $mensagem = "Nome: " .$nome. " " .$sobrenome. "\r\n".
+                "Email: " .$email. "\r\n".
+                "Mensagem " .$mensagem "\r\n";
 
     $cabecalho = "From: " .$email. "\r\n" .
                  "Reply-To: ".$email."\r\n" .
